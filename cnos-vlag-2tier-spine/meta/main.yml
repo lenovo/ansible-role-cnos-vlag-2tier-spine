@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Anil Kumar Muraleedharan
+  description: The cnos-vlag-2tier_spine role facilitates the configuration of the spine switches 
+   in the PoD for VLAG in a Tier 2 fabric for switches running Lenovo's CNOS operating system.
+  company: Lenovo
+  license: Apache 2.0
+  min_ansible_version: 2.3
+  platforms:
+  - name: Ubuntu, RHEL
+    versions:
+    - all
+  galaxy_tags:
+    - Lenovo
+    - cnos
+    - clos
+    - networking
+dependencies:
