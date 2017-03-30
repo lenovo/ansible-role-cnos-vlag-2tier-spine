@@ -1,8 +1,0 @@
-# Common code to configure all spine switches
- - name: Module to Configure Lenovo Tier2 Spine Switch
-   hosts: cnos-vlag-2tier-spine
-   gather_facts: no
-   connection: local
-
-   roles:
-    - cnos-vlag-2tier-spine
