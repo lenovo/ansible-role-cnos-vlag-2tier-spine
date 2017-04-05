@@ -5,4 +5,4 @@
    connection: local
 
    roles:
-    - cnos-vlag-2tier-spine
+    - lenovo.cnos-vlag-2tier-spine
