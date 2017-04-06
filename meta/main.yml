@@ -13,6 +13,6 @@ galaxy_info:
   galaxy_tags:
     - Lenovo
     - cnos
-    - clos
+    - vlag
     - networking
 dependencies:
