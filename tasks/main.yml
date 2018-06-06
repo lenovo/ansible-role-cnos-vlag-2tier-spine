@@ -5,7 +5,7 @@
   with_items: "{{cnos_vlag_2tier_spine_north_data}}"
 
 - name: Applying CLI commands VLAG Tier2 North Spine Switches
-  cnos_conditional_template: host={{ inventory_hostname }} username={{ hostvars[inventory_hostname]['username']}}  password={{ hostvars[inventory_hostname]['password']}} deviceType={{ hostvars[inventory_hostname]['deviceType']}} condition={{ hostvars[inventory_hostname]['condition']}} flag='{{item.flag}}' commandfile=./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_north_commands.txt outputfile=./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_north_output.txt
+  cnos_conditional_template: host={{ inventory_hostname }} username={{ hostvars[inventory_hostname]['ansible_ssh_user']}}  password={{ hostvars[inventory_hostname]['ansible_ssh_pass']}} deviceType={{ hostvars[inventory_hostname]['deviceType']}} condition={{ hostvars[inventory_hostname]['condition']}} flag='{{item.flag}}' commandfile=./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_north_commands.txt outputfile=./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_north_output.txt
   with_items: "{{cnos_vlag_2tier_spine_north_data}}"
 
 - name: Replace VLAG Tier2 Spine South bound CLI command template with values
@@ -13,7 +13,7 @@
   with_items: "{{cnos_vlag_2tier_spine_south_data}}"
 
 - name: Applying CLI commands VLAG Tier2 South Spine Switches
-  cnos_conditional_template: host={{ inventory_hostname }} username={{ hostvars[inventory_hostname]['username']}}  password={{ hostvars[inventory_hostname]['password']}} deviceType={{ hostvars[inventory_hostname]['deviceType']}} condition={{ hostvars[inventory_hostname]['condition']}} flag='{{item.flag}}' commandfile=./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_south_commands.txt outputfile=./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_south_output.txt
+  cnos_conditional_template: host={{ inventory_hostname }} username={{ hostvars[inventory_hostname]['ansible_ssh_user']}}  password={{ hostvars[inventory_hostname]['ansible_ssh_pass']}} deviceType={{ hostvars[inventory_hostname]['deviceType']}} condition={{ hostvars[inventory_hostname]['condition']}} flag='{{item.flag}}' commandfile=./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_south_commands.txt outputfile=./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_south_output.txt
   with_items: "{{cnos_vlag_2tier_spine_south_data}}"
 
 - name: Replace VLAG Tier 2 Switches CLI show template with values
@@ -21,6 +21,6 @@
   with_items: "{{cnos_vlag_2tier_spine_data}}"
 
 - name: Applying CLI show commands VLAG Tier2 Switches
-  cnos_template: host={{ inventory_hostname }} username={{ hostvars[inventory_hostname]['username']}}  password={{ hostvars[inventory_hostname]['password']}} deviceType={{ hostvars[inventory_hostname]['deviceType']}} commandfile=./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_show_commands.txt outputfile=./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_show_output.txt
+  cnos_template: host={{ inventory_hostname }} username={{ hostvars[inventory_hostname]['ansible_ssh_user']}}  password={{ hostvars[inventory_hostname]['ansible_ssh_pass']}} deviceType={{ hostvars[inventory_hostname]['deviceType']}} commandfile=./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_show_commands.txt outputfile=./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_show_output.txt
   with_items: "{{cnos_vlag_2tier_spine_data}}"
 # Completed file
