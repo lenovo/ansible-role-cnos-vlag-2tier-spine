@@ -23,6 +23,16 @@ For more details, see [Configuring a multiple layer vLAG network](http://systemx
 ## Role Variables
 ---
 <add role variables information below>
+Available variables are listed below, along with description.
+
+The following are mandatory inventory variables:
+
+Variable | Description
+--- | ---
+`ansible_connection` | Has to be `network_cli`
+`ansible_network_os` | Has to be `enos`
+`ansible_ssh_user` | Specifies the username used to log into the switch
+`ansible_ssh_pass` | Specifies the password used to log into the switch
 
 The values of the variables used need to be modified to fit the specific scenario in which you are deploying the solution. To change the values of the variables, you need to visits the *vars* directory of each role and edit the *main.yml* file located there. The values stored in this file will be used by Ansible when the template is executed.
 
@@ -73,10 +83,10 @@ Open the */etc/ansible/hosts* file with root privileges. Most of the file is com
   
 ```
 [cnos-vlag-2tier-spine]
-10.240.178.76   username=<username> password=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.77
-10.240.178.77   username=<username> password=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.76
-10.240.178.78   username=<username> password=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.79
-10.240.178.79   username=<username> password=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.78
+10.240.178.76   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.77
+10.240.178.77   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.76
+10.240.178.78   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.79
+10.240.178.79   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.78
 ```
 **Note:** You need to change the IP addresses, including the IP addresses of the vLAG peers, to fit your specific topology. You also need to change the `<username>` and `<password>` to the appropriate values used to log into the specific Lenovo network devices.
 
