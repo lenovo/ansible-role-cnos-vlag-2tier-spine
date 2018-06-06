@@ -15,8 +15,7 @@
 #   Please change <username> and <password> with appropriate value for your switch.
 
 [cnos-vlag-2tier-spine]
-10.240.178.76   username=<username> password=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.77
-10.240.178.77   username=<username> password=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.76
-10.240.178.78   username=<username> password=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.79
-10.240.178.79   username=<username> password=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.78
-
+10.240.178.76   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.77
+10.240.178.77   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=north peerip=10.240.178.76
+10.240.178.78   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.79
+10.240.178.79   ansible_network_os=cnos ansible_ssh_user=<username> ansible_ssh_pass=<password> deviceType=g8272_cnos condition=south peerip=10.240.178.78
