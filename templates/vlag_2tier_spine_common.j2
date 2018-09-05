@@ -1,10 +1,10 @@
 
 #ISL configuration
 interface ethernet {{item.slot_chassis_number1}}
-aggregation-group {{item.portchannel_interface_number1}} mode {{item.portchannel_mode1}}
+channel-group {{item.portchannel_interface_number1}} mode {{item.portchannel_mode1}}
 exit
 
-interface port-aggregation {{item.portchannel_interface_number1}}
+interface port-channel {{item.portchannel_interface_number1}}
 shut
 lacp suspend-individual
 no shut
@@ -12,28 +12,28 @@ exit
 
 #LACP config
 interface ethernet {{item.slot_chassis_number2}}
-aggregation-group {{item.portchannel_interface_number2}} mode {{item.portchannel_mode1}}
+channel-group {{item.portchannel_interface_number2}} mode {{item.portchannel_mode1}}
 exit
 interface ethernet {{item.slot_chassis_number3}}
-aggregation-group {{item.portchannel_interface_number3}} mode {{item.portchannel_mode1}}
+channel-group {{item.portchannel_interface_number3}} mode {{item.portchannel_mode1}}
 exit
 interface ethernet {{item.slot_chassis_number4}}
-aggregation-group {{item.portchannel_interface_number4}}  mode {{item.portchannel_mode1}}
+channel-group {{item.portchannel_interface_number4}}  mode {{item.portchannel_mode1}}
 exit
 
 
 #VLAN configuration
-interface port-aggregation {{item.portchannel_interface_number1}}
-bridge-port mode {{item.switchport_mode1}}
+interface port-channel {{item.portchannel_interface_number1}}
+switchport mode {{item.switchport_mode1}}
 exit
-interface port-aggregation {{item.portchannel_interface_number2}}
-bridge-port mode {{item.switchport_mode1}}
+interface port-channel {{item.portchannel_interface_number2}}
+switchport mode {{item.switchport_mode1}}
 exit
-interface port-aggregation {{item.portchannel_interface_number3}}
-bridge-port mode {{item.switchport_mode1}}
+interface port-channel {{item.portchannel_interface_number3}}
+switchport mode {{item.switchport_mode1}}
 exit
-interface port-aggregation {{item.portchannel_interface_number4}}
-bridge-port mode {{item.switchport_mode1}}
+interface port-channel {{item.portchannel_interface_number4}}
+switchport mode {{item.switchport_mode1}}
 exit
 
 #STP configuration
@@ -41,13 +41,13 @@ spanning-tree mode {{item.stp_mode1}}
 
 #vLAG configuration
 vlag tier-id {{item.vlag_tier_id1}}
-vlag isl port-aggregation {{item.portchannel_interface_number1}}
+vlag isl port-channel {{item.portchannel_interface_number1}}
 vlag enable
-vlag instance {{item.vlag_instance_number1}} port-aggregation {{item.portchannel_interface_number2}}
+vlag instance {{item.vlag_instance_number1}} port-channel {{item.portchannel_interface_number2}}
 vlag instance {{item.vlag_instance_number1}} enable
-vlag instance {{item.vlag_instance_number2}} port-aggregation {{item.portchannel_interface_number3}}
+vlag instance {{item.vlag_instance_number2}} port-channel {{item.portchannel_interface_number3}}
 vlag instance {{item.vlag_instance_number2}} enable
-vlag instance {{item.vlag_instance_number3}} port-aggregation {{item.portchannel_interface_number4}}
+vlag instance {{item.vlag_instance_number3}} port-channel {{item.portchannel_interface_number4}}
 vlag instance {{item.vlag_instance_number3}} enable
 
 #individual commands
