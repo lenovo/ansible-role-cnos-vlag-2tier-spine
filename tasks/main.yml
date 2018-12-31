@@ -10,7 +10,7 @@
       username: "{{ hostvars[inventory_hostname]['ansible_ssh_user']}}"
       password: "{{ hostvars[inventory_hostname]['ansible_ssh_pass']}}"
       deviceType: "{{ hostvars[inventory_hostname]['deviceType']}}"
-      condition: {{ hostvars[inventory_hostname]['condition']}}"
+      condition: "{{ hostvars[inventory_hostname]['condition']}}"
       flag: '{{ item.flag }}'
       commandfile: ./commands/cnos_vlag_2tier_spine_{{ inventory_hostname }}_north_commands.txt
       outputfile: ./results/cnos_vlag_2tier_spine_{{ inventory_hostname }}_north_output.txt
